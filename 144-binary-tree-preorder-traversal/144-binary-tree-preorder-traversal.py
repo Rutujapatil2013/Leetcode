@@ -17,14 +17,14 @@ class Solution:
     def __init__(self):
         self.lst=[]
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        def inorder(root):
+        def preorder(root):
             if not root:
                 return []
             else:
                 self.lst.append(root.val)
-                inorder(root.left)
-                inorder(root.right)
-        inorder(root)
+                preorder(root.left)
+                preorder(root.right)
+        preorder(root)
         return self.lst
             
         
