@@ -15,14 +15,19 @@ class Solution:
         
 #################################################################
         
-# class Solution:
-#     def inorderTraversal(self, root: TreeNode) -> List[int]:
-#         stack,res = [],[]
-#         node = root
-#         while node or stack:
-#             while node: 
-#                 stack.append(node)
-#                 node = node.left
-#             node = stack.pop()
-#             res.append(node.val)
-#         return res
+class Solution:
+    def __init__(self):
+        self.lst=[]
+    def inorderTraversal(self, root):
+        def inorder(root):
+            if root is None:
+                return 
+            inorder(root.left)                       
+            self.lst.append(root.val)
+            inorder(root.right)
+        inorder(root)    
+        return self.lst
+        
+        
+        
+       
